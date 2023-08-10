@@ -25,7 +25,7 @@ export default function DarkModeToggle() {
       {hasMounted &&
         theme === themeConfig.LIGHT && ( // Only render on client, if pre-rendered will throw a hydration error
           <Icons.sun
-            className="h-8 w-8"
+            className="h-8 w-8 animate-fade-in"
             strokeWidth={1}
             suppressHydrationWarning
             fill="var(--color-primary)"
@@ -35,7 +35,7 @@ export default function DarkModeToggle() {
       {hasMounted &&
         theme !== themeConfig.LIGHT && ( // Only render on client, if pre-rendered will throw a hydration error
           <Icons.moon
-            className="h-8 w-8"
+            className="h-8 w-8 animate-fade-in"
             strokeWidth={1}
             suppressHydrationWarning
             fill="var(--color-primary)"

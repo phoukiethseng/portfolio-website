@@ -9,10 +9,10 @@
   --color-secondary: #d9ede9;
   --color-accent: #6926ab; */
 
-  --color-text: #030109;
+  --color-text: #2a2a2a;
   --color-background: #ffffff;
   --color-primary: #4730bb;
-  --color-secondary: #f0ecec;
+  --color-secondary: #e3d3f3;
   --color-accent: #703ba5;
 
   --color-primary-foreground: #040005;
@@ -32,4 +32,24 @@
   --color-primary: #4730bb;
   --color-secondary: #261e1e;
   --color-accent: #bc9ddc;
+}
+
+@keyframes fade-in-and-slide-up {
+  from {
+    opacity: 0.1;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
 }
