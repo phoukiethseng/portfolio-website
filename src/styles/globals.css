@@ -10,12 +10,43 @@
   --color-accent: #6926ab;
 
   --color-primary-foreground: #040005;
+  --color-secondary-foreground: var(--color-text);
+  --color-accent-foreground: #fdfcfd;
 }
 
 .dark {
   --color-text: #fdfcfd;
-  --color-background: #252508;
+  --color-background: #070702;
   --color-primary: #e8e878;
   --color-secondary: #31310c;
   --color-accent: #e524e5;
+}
+
+@keyframes expandRotating {
+  0% {
+    transform: scale(0);
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: scale(0.5);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: scale(1);
+    transform: rotate(0deg);
+  }
+}
+
+@keygrames shrinkRotating {
+  50% {
+    transform: rotate(180deg);
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform: scale(0.01);
+  }
 }

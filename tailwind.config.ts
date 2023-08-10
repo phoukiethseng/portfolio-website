@@ -14,14 +14,29 @@ export default {
           foreground: "var(--color-primary-foreground)",
         },
         secondary: {
-          DEFAULT: "var(--color-secondarys)",
+          DEFAULT: "var(--color-secondary)",
+          foreground: "var(--color-secondary-foreground)",
         },
         accent: {
-          DEFAULT: "var(--color-accent",
+          DEFAULT: "var(--color-accent)",
+          foreground: "var(--color-accent-foreground)",
         },
         base: {
           DEFAULT: "var(--color-text)",
         },
+      },
+      keyframes: {
+        "shrink-rotate": {
+          "0%": {
+            transform: "rotate(0deg) scale(1)",
+          },
+          "100%": {
+            transform: "rotate(360deg) scale(0)",
+          },
+        },
+      },
+      animation: {
+        shrink: "shrink-rotate 1s ease-in-out infinite",
       },
     },
   },

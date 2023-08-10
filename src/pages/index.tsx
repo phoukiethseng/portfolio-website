@@ -1,9 +1,7 @@
 import Head from "next/head";
-import { useTheme } from "next-themes";
-import { themeConfig } from "@/configs/theme";
+import DarkModeToggle from "@/components/dark-mode-toggle";
 
 export default function Home() {
-  const { setTheme } = useTheme();
   return (
     <>
       <Head>
@@ -29,18 +27,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-row items-center justify-start gap-3">
-          <button
-            onClick={() => setTheme(themeConfig.DARK)}
-            className="rounded-lg bg-primary px-4 py-3 text-primary-foreground"
-          >
-            Dark
-          </button>
-          <button
-            onClick={() => setTheme(themeConfig.LIGHT)}
-            className="rounded-lg bg-primary px-4 py-3 text-primary-foreground"
-          >
-            Light
-          </button>
+          <DarkModeToggle />
         </div>
       </main>
     </>
