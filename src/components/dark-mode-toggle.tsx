@@ -28,6 +28,8 @@ export default function DarkModeToggle() {
             className="h-8 w-8"
             strokeWidth={1}
             suppressHydrationWarning
+            fill="var(--color-primary)"
+            color="var(--color-primary)"
           />
         )}
       {hasMounted &&
@@ -36,6 +38,8 @@ export default function DarkModeToggle() {
             className="h-8 w-8"
             strokeWidth={1}
             suppressHydrationWarning
+            fill="var(--color-primary)"
+            color="var(--color-primary)"
           />
         )}
     </Button>

@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --color-text: #040005;
+  /* --color-text: #040005;
   --color-background: #fdfcfd;
   --color-primary: #e8e878;
   --color-secondary: #d9ede9;
-  --color-accent: #6926ab;
+  --color-accent: #6926ab; */
+
+  --color-text: #030109;
+  --color-background: #ffffff;
+  --color-primary: #4730bb;
+  --color-secondary: #f0ecec;
+  --color-accent: #703ba5;
 
   --color-primary-foreground: #040005;
   --color-secondary-foreground: var(--color-text);
@@ -15,38 +21,15 @@
 }
 
 .dark {
-  --color-text: #fdfcfd;
+  /* --color-text: #fdfcfd;
   --color-background: #070702;
   --color-primary: #e8e878;
   --color-secondary: #31310c;
-  --color-accent: #e524e5;
-}
+  --color-accent: #e524e5; */
 
-@keyframes expandRotating {
-  0% {
-    transform: scale(0);
-    transform: rotate(360deg);
-  }
-
-  50% {
-    transform: scale(0.5);
-    transform: rotate(180deg);
-  }
-
-  100% {
-    transform: scale(1);
-    transform: rotate(0deg);
-  }
-}
-
-@keygrames shrinkRotating {
-  50% {
-    transform: rotate(180deg);
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: rotate(360deg);
-    transform: scale(0.01);
-  }
+  --color-text: #ffffff;
+  --color-background: #030109;
+  --color-primary: #4730bb;
+  --color-secondary: #261e1e;
+  --color-accent: #bc9ddc;
 }

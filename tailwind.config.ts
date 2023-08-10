@@ -25,19 +25,6 @@ export default {
           DEFAULT: "var(--color-text)",
         },
       },
-      keyframes: {
-        "shrink-rotate": {
-          "0%": {
-            transform: "rotate(0deg) scale(1)",
-          },
-          "100%": {
-            transform: "rotate(360deg) scale(0)",
-          },
-        },
-      },
-      animation: {
-        shrink: "shrink-rotate 1s ease-in-out infinite",
-      },
     },
   },
   plugins: [],
