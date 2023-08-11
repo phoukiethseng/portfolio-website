@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont.ttf");
+}
+
 :root {
   /* --color-text: #040005;
   --color-background: #fdfcfd;
@@ -12,7 +17,7 @@
   --color-text: #2a2a2a;
   --color-background: #ffffff;
   --color-primary: #4730bb;
-  --color-secondary: #e3d3f3;
+  --color-secondary: #f0ecec;
   --color-accent: #703ba5;
 
   --color-primary-foreground: #040005;
@@ -28,7 +33,7 @@
   --color-accent: #e524e5; */
 
   --color-text: #ffffff;
-  --color-background: #030109;
+  --color-background: #020104;
   --color-primary: #4730bb;
   --color-secondary: #261e1e;
   --color-accent: #bc9ddc;

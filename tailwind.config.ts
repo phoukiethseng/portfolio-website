@@ -27,7 +27,10 @@ export default {
       },
       animation: {
         "fade-in-and-slide-up": "fade-in-and-slide-up 1s ease-in-out",
-        "fade-in": "fade-in 0.5s ease-in-out",
+        "fade-in": "fade-in 0.7s ease-in-out",
+      },
+      fontFamily: {
+        inter: ["Inter", "system-ui"],
       },
     },
   },

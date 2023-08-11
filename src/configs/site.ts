@@ -1,7 +1,10 @@
+import About from "@/components/sections/about";
+
 export const headerNavItems = [
   {
     label: "About",
     href: "#about",
+    component: About,
   },
   {
     label: "Portfolio",
@@ -26,6 +29,13 @@ export const socials = [
     href: "https://github.com/phoukiethseng",
     img: {
       src: "/socials/github-logo.png",
+    },
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/phou-kiethseng/",
+    img: {
+      src: "/socials/linkedin-logo.png",
     },
   },
 ];
