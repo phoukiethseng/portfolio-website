@@ -1,5 +1,6 @@
 import * as React from "react";
-import { cva, cx } from "class-variance-authority";
+import { cva } from "class-variance-authority";
+import { cn } from "@/utils/lib";
 import { type VariantProps } from "class-variance-authority";
 
 const buttonVariant = cva(["rounded-md text-base"], {
@@ -47,7 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         {...props}
-        className={cx(buttonVariant({ size, type, border, hover }), className)}
+        className={cn(buttonVariant({ size, type, border, hover }), className)}
       >
         {children}
       </button>

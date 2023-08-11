@@ -2,7 +2,7 @@ import { headerNavItems } from "@/configs/site";
 import Link from "next/link";
 import DarkModeToggle from "./dark-mode-toggle";
 import { useRouter } from "next/router";
-import { cx } from "class-variance-authority";
+import { cn } from "@/utils/lib";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -33,7 +33,7 @@ export default function Header() {
               <Link href={navItem.href}>
                 <div className="flex flex-col items-center justify-start gap-0">
                   <span
-                    className={cx(
+                    className={cn(
                       "transition-color duration-200",
                       mounted &&
                         currentPath.includes(navItem.href) &&

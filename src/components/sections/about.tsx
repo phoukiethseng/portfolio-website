@@ -1,4 +1,5 @@
 import { socials } from "@/configs/site";
+import Roundish from "../svg/roundish";
 
 export default function About() {
   return (
@@ -33,6 +34,7 @@ export default function About() {
         </ul>
       </div>
       <div className="absolute top-[40%] z-[-50] mx-auto h-[60%] w-[40%] rounded-full bg-gradient-to-r from-primary to-accent opacity-20 blur-3xl"></div>
+      <Roundish className="w-[500px] bg-transparent" />
     </div>
   );
 }
