@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "@/utils/lib";
+import { cn } from "@/lib/utils";
 import { type VariantProps } from "class-variance-authority";
 
 const buttonVariant = cva(["rounded-md text-base"], {

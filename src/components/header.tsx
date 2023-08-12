@@ -2,7 +2,7 @@ import { headerNavItems } from "@/configs/site";
 import Link from "next/link";
 import DarkModeToggle from "./dark-mode-toggle";
 import { useRouter } from "next/router";
-import { cn } from "@/utils/lib";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 export default function Header() {

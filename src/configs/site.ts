@@ -18,13 +18,6 @@ export const headerNavItems = [
 
 export const socials = [
   {
-    name: "Twitter",
-    href: "https://twitter.com/PhouKiethseng",
-    img: {
-      src: "/socials/twitter-logo.png", // Got it from: https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/image-resources
-    },
-  },
-  {
     name: "GitHub",
     href: "https://github.com/phoukiethseng",
     img: {
@@ -36,6 +29,20 @@ export const socials = [
     href: "https://www.linkedin.com/in/phou-kiethseng/",
     img: {
       src: "/socials/linkedin-logo.png",
+    },
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/PhouKiethseng",
+    img: {
+      src: "/socials/twitter-logo.png", // Got it from: https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/image-resources
+    },
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/phoukiethseng",
+    img: {
+      src: "/socials/telegram-logo.png",
     },
   },
 ];
