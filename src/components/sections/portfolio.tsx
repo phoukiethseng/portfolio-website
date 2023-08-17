@@ -1,7 +1,22 @@
 import React from "react";
-import ProjectCard from "../project-card";
+import ProjectCard, { ProjectCardProps } from "../project-card";
 import Title from "../title";
-import { openSourceProjects, personalProjects } from "@/configs/site";
+import {
+  ProjectType,
+  openSourceProjects,
+  personalProjects,
+} from "@/configs/site";
+import { dataTransformer } from "@/lib/utils";
+
+const toProjectCardProps = dataTransformer<ProjectType, ProjectCardProps>(
+  (project) => ({
+    title: project.name,
+    description: project.description,
+    viewCodesUrl: project?.repoLink,
+    viewLiveUrl: project?.liveLink,
+    previewImg: project?.previewImg,
+  })
+);
 
 export default function Portfolio() {
   const articleStyle =
@@ -14,28 +29,14 @@ export default function Portfolio() {
             Open Source Contributions
           </Title>
           {openSourceProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              viewCodesUrl={project.viewCodesUrl}
-              viewLiveUrl={project.viewLiveUrl}
-              previewImg={project.previewImg}
-            />
+            <ProjectCard key={index} {...toProjectCardProps(project)} />
           ))}
         </article>
       )}
       {personalProjects.length > 0 && (
         <article className={articleStyle}>
           {personalProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              viewCodesUrl={project.viewCodesUrl}
-              viewLiveUrl={project.viewLiveUrl}
-              previewImg={project.previewImg}
-            />
+            <ProjectCard key={index} {...toProjectCardProps(project)} />
           ))}
         </article>
       )}

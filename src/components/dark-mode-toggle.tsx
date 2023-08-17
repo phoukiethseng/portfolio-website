@@ -17,7 +17,7 @@ export default function DarkModeToggle() {
       className="transition-all duration-150 hover:text-primary" // Icons will be primary color when hovered
       hoverBorder={"primary"}
       border={"base"}
-      type={"outline"}
+      color={"outline"}
       size={"icon"}
       onClick={() =>
         setTheme(

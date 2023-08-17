@@ -1,6 +1,13 @@
-import { ProjectCardProps } from "@/components/project-card";
 import About from "@/components/sections/about";
 import Portfolio from "@/components/sections/portfolio";
+
+export type ProjectType = {
+  name: string;
+  description: string;
+  liveLink?: string;
+  repoLink?: string;
+  previewImg?: string;
+};
 
 export const headerNavItems = [
   {
@@ -19,14 +26,14 @@ export const headerNavItems = [
   },
 ];
 
-export const personalProjects: ProjectCardProps[] = [];
-export const openSourceProjects: ProjectCardProps[] = [
+export const personalProjects: ProjectType[] = [];
+export const openSourceProjects: ProjectType[] = [
   {
-    title: "Code Racer",
+    name: "Code Racer",
     description:
       "My first contribution to open source community project. It was started by youtuber Web Dev Cody. This project teach me alot about collaborating with other people.",
-    viewLiveUrl: "https://code-racer-eight.vercel.app/",
-    viewCodesUrl: "https://github.com/webdevcody/code-racer",
+    liveLink: "https://code-racer-eight.vercel.app/",
+    repoLink: "https://github.com/webdevcody/code-racer",
     previewImg: "/project-previews/code-racer.png",
   },
 ];

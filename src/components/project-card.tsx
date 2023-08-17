@@ -37,25 +37,27 @@ export default function ProjectCard({
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
           <div className="flex flex-row items-center justify-start gap-3">
-            {viewLiveUrl && (
-              <Link href={viewLiveUrl}>
-                <Button size={BUTTON_SIZE} className="font-medium">
-                  View Live
-                </Button>
-              </Link>
-            )}
-            {viewCodesUrl && (
-              <Link href={viewCodesUrl}>
-                <Button
-                  size={BUTTON_SIZE}
-                  type={"secondary"}
-                  border={"secondary"}
-                  className="font-medium"
-                >
-                  View Codes
-                </Button>
-              </Link>
-            )}
+            <Link href={viewLiveUrl ?? ""}>
+              <Button
+                disabled={!viewLiveUrl}
+                size={BUTTON_SIZE}
+                className="font-medium"
+              >
+                View Live
+              </Button>
+            </Link>
+
+            <Link href={viewCodesUrl ?? ""}>
+              <Button
+                disabled={!viewCodesUrl}
+                size={BUTTON_SIZE}
+                color={"secondary"}
+                border={"secondary"}
+                className="font-medium"
+              >
+                View Codes
+              </Button>
+            </Link>
           </div>
         </div>
       </CardContent>
