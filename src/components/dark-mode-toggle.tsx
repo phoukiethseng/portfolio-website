@@ -15,7 +15,7 @@ export default function DarkModeToggle() {
   return (
     <Button
       className="transition-all duration-150 hover:text-primary" // Icons will be primary color when hovered
-      hover={"primary"}
+      hoverBorder={"primary"}
       border={"base"}
       type={"outline"}
       size={"icon"}
@@ -28,7 +28,7 @@ export default function DarkModeToggle() {
       {hasMounted &&
         theme === themeConfig.LIGHT && ( // Only render on client, if pre-rendered will throw a hydration error
           <Icons.sun
-            className="h-6 w-6 animate-fade-in"
+            className="animate-fade-in h-6 w-6"
             strokeWidth={1}
             suppressHydrationWarning
           />
@@ -36,7 +36,7 @@ export default function DarkModeToggle() {
       {hasMounted &&
         theme !== themeConfig.LIGHT && ( // Only render on client, if pre-rendered will throw a hydration error
           <Icons.moon
-            className="h-6 w-6 animate-fade-in"
+            className="animate-fade-in h-6 w-6"
             strokeWidth={1}
             suppressHydrationWarning
           />

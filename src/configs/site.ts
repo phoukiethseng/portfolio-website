@@ -24,9 +24,10 @@ export const openSourceProjects: ProjectCardProps[] = [
   {
     title: "Code Racer",
     description:
-      "My first contribution to open source community project. This project teach me alot about collaborating with other people.",
+      "My first contribution to open source community project. It was started by youtuber Web Dev Cody. This project teach me alot about collaborating with other people.",
     viewLiveUrl: "https://code-racer-eight.vercel.app/",
     viewCodesUrl: "https://github.com/webdevcody/code-racer",
+    previewImg: "/project-previews/code-racer.png",
   },
 ];
 
