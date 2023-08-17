@@ -11,7 +11,7 @@ export default function Home() {
       {headerNavItems.map((navItem, index) =>
         navItem.component ? (
           <section
-            className="min-h-[100vh] min-w-[100vw]"
+            className="min-h-[100vh]"
             id={navItem.href.slice(1)}
             key={index}
           >
