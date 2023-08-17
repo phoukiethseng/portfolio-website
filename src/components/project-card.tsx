@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import Button from "./button";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
   viewLiveUrl?: string;

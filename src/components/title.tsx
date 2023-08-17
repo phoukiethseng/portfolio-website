@@ -10,8 +10,8 @@ const titleVariants = cva("text-foreground", {
       md: "text-md",
       lg: "text-lg",
       xl: "text-xl",
-      xxl: "text-2xl",
-      xxxl: "text-3xl",
+      "2xl": "text-2xl",
+      "3xl": "text-3xl",
     },
     thickness: {
       semibold: "font-semibold",
