@@ -1,4 +1,5 @@
 import About from "@/components/sections/about";
+import Portfolio from "@/components/sections/portfolio";
 
 export const headerNavItems = [
   {
@@ -9,6 +10,7 @@ export const headerNavItems = [
   {
     label: "Portfolio",
     href: "#portfolio",
+    component: Portfolio,
   },
   {
     label: "Contact",

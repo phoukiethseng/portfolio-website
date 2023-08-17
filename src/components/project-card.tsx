@@ -1,0 +1,42 @@
+import React from "react";
+
+import Link from "next/link";
+import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
+import Button from "./button";
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  viewLiveUrl?: string;
+  viewCodesUrl?: string;
+}
+
+export default function ProjectCard({
+  title,
+  description,
+  viewCodesUrl,
+  viewLiveUrl,
+}: ProjectCardProps) {
+  return (
+    <Card className="max-w-[450px]">
+      <CardContent className="flex flex-col gap-4 p-5">
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+        <div className="flex flex-row items-center justify-start gap-3">
+          {viewLiveUrl && (
+            <Link href={viewLiveUrl}>
+              <Button size={"xs"} hover={"secondary"}>
+                View Live
+              </Button>
+            </Link>
+          )}
+          {viewCodesUrl && (
+            <Link href={viewCodesUrl}>
+              <Button size={"xs"}>View Codes</Button>
+            </Link>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}

@@ -7,54 +7,79 @@
   src: url("/fonts/Inter-VariableFont.ttf");
 }
 
-:root {
-  /* --color-text: #040005;
-  --color-background: #fdfcfd;
-  --color-primary: #e8e878;
-  --color-secondary: #d9ede9;
-  --color-accent: #6926ab; */
+@layer base {
+  :root {
+    --color-text: #2a2a2a;
 
-  --color-text: #2a2a2a;
-  --color-background: #ffffff;
-  --color-primary: #4730bb;
-  --color-secondary: #f0ecec;
-  --color-accent: #703ba5;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
-  --color-primary-foreground: #040005;
-  --color-secondary-foreground: var(--color-text);
-  --color-accent-foreground: #fdfcfd;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 250 59% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 12% 93%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 270 47% 44%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --color-text: 0 0% 100%;
+
+    --background: 260 60% 1%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 250 59% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 12% 13%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 270 47% 74%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
 }
 
-.dark {
-  /* --color-text: #fdfcfd;
-  --color-background: #070702;
-  --color-primary: #e8e878;
-  --color-secondary: #31310c;
-  --color-accent: #e524e5; */
-
-  --color-text: #ffffff;
-  --color-background: #020104;
-  --color-primary: #4730bb;
-  --color-secondary: #261e1e;
-  --color-accent: #bc9ddc;
-}
-
-@keyframes fade-in-and-slide-up {
-  from {
-    opacity: 0.1;
-    transform: translateY(20px);
+@layer base {
+  * {
+    @apply border-border;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
+  body {
+    @apply bg-background text-foreground;
   }
 }

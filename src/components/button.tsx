@@ -14,9 +14,10 @@ const buttonVariant = cva(["rounded-md text-base"], {
     },
     size: {
       icon: "p-2",
-      sm: "py-2 px-3",
-      md: "py-4 px-5",
-      lg: "py-6 px-7",
+      xs: "py-1 px-2 text-sm",
+      sm: "py-2 px-3 text-md",
+      md: "py-4 px-5 text-lg",
+      lg: "py-6 px-7 text-xl",
     },
     border: {
       primary: "border-primary",
