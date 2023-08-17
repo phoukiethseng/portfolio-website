@@ -22,7 +22,7 @@ export const headerNavItems = [
 export const personalProjects: ProjectCardProps[] = [];
 export const openSourceProjects: ProjectCardProps[] = [
   {
-    title: "Code-Racer",
+    title: "Code Racer",
     description:
       "My first contribution to open source community project. This project teach me alot about collaborating with other people.",
     viewLiveUrl: "https://code-racer-eight.vercel.app/",

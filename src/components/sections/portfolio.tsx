@@ -7,7 +7,7 @@ export default function Portfolio() {
   const articleStyle =
     "flex flex-col items-center gap-6 mx-auto md:m-0 min-w-[330px] max-w-[400px]";
   return (
-    <div className="item-center flex flex-col justify-start gap-6 px-4  md:flex-row md:justify-center">
+    <div className="item-center flex flex-col justify-start gap-6 px-4 md:flex-row md:justify-center">
       {openSourceProjects.length > 0 && (
         <article className={articleStyle}>
           <Title size={"2xl"} thickness={"bold"}>

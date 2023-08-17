@@ -9,6 +9,7 @@ export interface ProjectCardProps {
   description: string;
   viewLiveUrl?: string;
   viewCodesUrl?: string;
+  previewImg?: string;
 }
 
 export default function ProjectCard({
@@ -25,14 +26,16 @@ export default function ProjectCard({
         <div className="flex flex-row items-center justify-start gap-3">
           {viewLiveUrl && (
             <Link href={viewLiveUrl}>
-              <Button size={"xs"} hover={"secondary"}>
+              <Button size={"sm"} className="font-medium">
                 View Live
               </Button>
             </Link>
           )}
           {viewCodesUrl && (
             <Link href={viewCodesUrl}>
-              <Button size={"xs"}>View Codes</Button>
+              <Button size={"sm"} className="font-medium">
+                View Codes
+              </Button>
             </Link>
           )}
         </div>

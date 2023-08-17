@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { type VariantProps } from "class-variance-authority";
 
-const buttonVariant = cva(["rounded-md text-base"], {
+const buttonVariant = cva(["rounded-md text-base hover:opacity-[0.9]"], {
   variants: {
     type: {
       primary: "bg-primary text-primary-foreground",
@@ -14,10 +14,18 @@ const buttonVariant = cva(["rounded-md text-base"], {
     },
     size: {
       icon: "p-2",
-      xs: "py-1 px-2 text-sm",
-      sm: "py-2 px-3 text-md",
-      md: "py-4 px-5 text-lg",
-      lg: "py-6 px-7 text-xl",
+      xs: "py-1 px-2",
+      sm: "py-2 px-3",
+      md: "py-4 px-5",
+      lg: "py-6 px-7",
+    },
+    textSize: {
+      xs: "text-xs",
+      sm: "text-sm",
+      md: "text-md",
+      lg: "text-lg",
+      xl: "text-xl",
+      "2xl": "text-2xl",
     },
     border: {
       primary: "border-primary",
@@ -27,9 +35,9 @@ const buttonVariant = cva(["rounded-md text-base"], {
     },
     hover: {
       none: "",
-      primary: "hover:border-primary",
-      secondary: "hover:border-secondary",
-      accent: "hover:border-accent",
+      primary: "hover:border-primary hover:bg-primary",
+      secondary: "hover:border-secondary hover:bg-secondary",
+      accent: "hover:border-accent hover:bg-accent",
     },
   },
   defaultVariants: {
@@ -37,6 +45,7 @@ const buttonVariant = cva(["rounded-md text-base"], {
     type: "primary",
     border: "primary",
     hover: "none",
+    textSize: "md",
   },
 });
 
