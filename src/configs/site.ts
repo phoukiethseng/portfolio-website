@@ -26,7 +26,23 @@ export const headerNavItems = [
   },
 ];
 
-export const personalProjects: ProjectType[] = [];
+export const personalProjects: ProjectType[] = [
+  {
+    name: "Portfolio Website",
+    description:
+      "This website itself. After my first contribution to open source community project, I decided to work on this website. By apply what I learned from community project, this project is closely following best practice and clean code architecture.",
+    previewImg: "/project-previews/portfolio-website.png",
+    repoLink: "https://github.com/phoukiethseng/portfolio-website",
+  },
+  {
+    name: "Todo Web App",
+    description:
+      "Simple todo app. This is my very first personal project. This project teach me alot about modern web development technology. Since this is my first beginner project, the code is obviously messy.",
+    liveLink: "https://todo-web-app-murex.vercel.app/",
+    repoLink: "https://github.com/phoukiethseng/todo-web-app",
+    previewImg: "/project-previews/todo-web-app.png",
+  },
+];
 export const openSourceProjects: ProjectType[] = [
   {
     name: "Code Racer",

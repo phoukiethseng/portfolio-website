@@ -35,6 +35,9 @@ export default function Portfolio() {
       )}
       {personalProjects.length > 0 && (
         <article className={articleStyle}>
+          <Title className="text-center" size={"3xl"} thickness={"bold"}>
+            Personal Projects
+          </Title>
           {personalProjects.map((project, index) => (
             <ProjectCard key={index} {...toProjectCardProps(project)} />
           ))}

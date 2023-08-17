@@ -13,7 +13,7 @@ export interface ProjectCardProps {
   previewImg?: string;
 }
 
-const ASPECT_RATIO = 16 / 10;
+const ASPECT_RATIO = 16 / 9;
 const BUTTON_SIZE = "sm";
 
 export default function ProjectCard({
@@ -27,7 +27,7 @@ export default function ProjectCard({
     <Card>
       <CardContent className="flex flex-col items-center justify-start gap-4 p-5 ">
         {previewImg && (
-          <div className="w-[90%]">
+          <div className="w-full">
             <AspectRatio ratio={ASPECT_RATIO}>
               <img src={previewImg} className="h-full w-full object-cover" />
             </AspectRatio>
