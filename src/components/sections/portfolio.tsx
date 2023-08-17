@@ -1,8 +1,8 @@
 import React from "react";
-import ProjectCard, { ProjectCardProps } from "../project-card";
+import ProjectCard, { type ProjectCardProps } from "../project-card";
 import Title from "../title";
 import {
-  ProjectType,
+  type ProjectType,
   openSourceProjects,
   personalProjects,
 } from "@/configs/site";
