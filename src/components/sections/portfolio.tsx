@@ -6,17 +6,7 @@ import {
   openSourceProjects,
   personalProjects,
 } from "@/configs/site";
-import { dataTransformer } from "@/lib/utils";
-
-const toProjectCardProps = dataTransformer<ProjectType, ProjectCardProps>(
-  (project) => ({
-    title: project.name,
-    description: project.description,
-    viewCodesUrl: project?.repoLink,
-    viewLiveUrl: project?.liveLink,
-    previewImg: project?.previewImg,
-  })
-);
+import { toProjectCardProps } from "@/lib/mappers";
 
 export default function Portfolio() {
   const articleStyle =

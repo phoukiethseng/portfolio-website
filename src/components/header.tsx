@@ -1,11 +1,20 @@
-import { headerNavItems } from "@/configs/site";
+import { homePageSections } from "@/configs/site";
 import Link from "next/link";
 import DarkModeToggle from "./dark-mode-toggle";
 import { useRouter } from "next/router";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+export type NavigationMenuItemType = {
+  label: string;
+  id: string;
+};
+
+interface HeaderProps {
+  navMenuItems: NavigationMenuItemType[];
+}
+
+export default function Header({ navMenuItems }: HeaderProps) {
   const router = useRouter();
   const { asPath: currentPath } = router;
 
@@ -28,21 +37,21 @@ export default function Header() {
       </Link>
       <div className="flex flex-row items-center justify-end gap-12">
         <ul className="text-md font-inter flex flex-row items-center justify-start gap-5 font-semibold md:gap-10">
-          {headerNavItems.map((navItem, index) => (
+          {navMenuItems.map((navItem, index) => (
             <li key={index}>
-              <Link href={navItem.href}>
+              <Link href={`#${navItem.id}`}>
                 <div className="flex flex-col items-center justify-start gap-0">
                   <span
                     className={cn(
                       "transition-color duration-200",
                       mounted &&
-                        currentPath.includes(navItem.href) &&
+                        currentPath.includes(`#${navItem.id}`) &&
                         "text-primary"
                     )}
                   >
                     {navItem.label}
                   </span>
-                  {mounted && currentPath.includes(navItem.href) && (
+                  {mounted && currentPath.includes(`#${navItem.id}`) && (
                     <span className="animate-fade-in absolute top-[40px] text-[8px] text-primary">
                       ⬤
                     </span>

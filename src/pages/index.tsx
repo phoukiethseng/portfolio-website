@@ -1,5 +1,7 @@
-import { headerNavItems } from "@/configs/site";
+import { homePageSections } from "@/configs/site";
+import { toNavigationMenuItem } from "@/lib/mappers";
 import Head from "next/head";
+
 export default function Home() {
   return (
     <>
@@ -8,11 +10,11 @@ export default function Home() {
         <meta name="description" content="Phou Kiethseng portfolio website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {headerNavItems.map((navItem, index) =>
+      {homePageSections.map((navItem, index) =>
         navItem.component ? (
           <section
             className="min-h-[100vh]"
-            id={navItem.href.slice(1)}
+            id={toNavigationMenuItem(navItem).id}
             key={index}
           >
             <navItem.component />

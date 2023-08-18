@@ -1,4 +1,5 @@
 import About from "@/components/sections/about";
+import Contact from "@/components/sections/contact";
 import Portfolio from "@/components/sections/portfolio";
 
 export type ProjectType = {
@@ -9,20 +10,20 @@ export type ProjectType = {
   previewImg?: string;
 };
 
-export const headerNavItems = [
+export type HomePageSectionType = (typeof homePageSections)[number];
+
+export const homePageSections = [
   {
     label: "About",
-    href: "#about",
     component: About,
   },
   {
     label: "Portfolio",
-    href: "#portfolio",
     component: Portfolio,
   },
   {
     label: "Contact",
-    href: "#contact",
+    component: Contact,
   },
 ];
 
