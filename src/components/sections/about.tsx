@@ -8,19 +8,21 @@ import {
 export default function About() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-2 px-4 pt-[100px] md:px-24 md:pt-[250px] lg:flex-row lg:gap-8">
-      <div className="animate-fade-in-and-slide-up flex flex-col items-start justify-start text-center sm:text-start">
-        <h1 className=" font-inter text-center text-4xl font-extrabold sm:text-start md:text-5xl">
+      <div className="animate-fade-in-and-slide-up flex flex-col items-center justify-start text-center sm:max-w-[500px] md:max-w-[700px]">
+        <h1 className="font-inter text-center text-4xl font-extrabold sm:text-start md:text-6xl">
           Hi I&apos;m{" "}
           <span className="bg-gradient-to-r from-primary to-pink-400 bg-clip-text text-transparent">
             Phou Kiethseng
           </span>
-          <br />
-          <p className="mt-2 text-center text-3xl sm:text-start md:text-4xl">
-            Aspiring Developer and Student
-          </p>
         </h1>
-        <p className="mx-auto mt-4 text-lg sm:text-start md:mx-0 md:text-xl">
-          I enjoy building and designing web application
+        <p className="mt-2 text-center text-2xl font-extrabold sm:text-start md:text-4xl">
+          Aspiring Developer and Student
+        </p>
+        <span className="mt-6 text-6xl">👋🏻</span>
+        <p className="md:text-md text-md mx-auto mt-6 sm:text-start md:mx-0">
+          I am curious about web development and eager to gain more hands-on
+          experience in this field. I am always looking for new challenges and
+          opportunities to grow as a developer and a learner.
         </p>
         <ul className="mx-auto mt-9 flex flex-row items-center justify-center gap-3 rounded-md p-2">
           {socials.map((social, index) => (
