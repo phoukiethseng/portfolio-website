@@ -1,7 +1,7 @@
-import { HomePageSectionType, ProjectType } from "@/configs/site";
+import { HomePageSectionType, type ProjectType } from "@/configs/site";
 import { dataTransformer } from "./utils";
-import { NavigationMenuItemType } from "@/components/header";
-import { ProjectCardProps } from "@/components/project-card";
+import { type NavigationMenuItemType } from "@/components/header";
+import { type ProjectCardProps } from "@/components/project-card";
 
 export const toNavigationMenuItem = dataTransformer<
   HomePageSectionType,
