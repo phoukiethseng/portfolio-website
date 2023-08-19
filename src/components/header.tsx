@@ -1,4 +1,3 @@
-import { homePageSections } from "@/configs/site";
 import Link from "next/link";
 import DarkModeToggle from "./dark-mode-toggle";
 import { useRouter } from "next/router";

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import Button from "./button";
 import { AspectRatio } from "./ui/aspect-ratio";
+import Image from "next/image";
 
 export interface ProjectCardProps {
   title: string;
@@ -29,7 +30,13 @@ export default function ProjectCard({
         {previewImg && (
           <div className="w-full">
             <AspectRatio ratio={ASPECT_RATIO}>
-              <img src={previewImg} className="h-full w-full object-cover" />
+              <Image
+                alt={"Project Preview"}
+                src={previewImg}
+                className="h-full w-full object-cover"
+                width={1000}
+                height={1000}
+              />
             </AspectRatio>
           </div>
         )}

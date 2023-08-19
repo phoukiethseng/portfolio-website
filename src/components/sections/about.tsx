@@ -4,6 +4,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -30,10 +31,12 @@ export default function About() {
               <HoverCardTrigger asChild>
                 <li className="h-12 w-12 rounded-md p-2 transition-all duration-200 hover:bg-secondary">
                   <a href={social.href}>
-                    <img
+                    <Image
                       src={social.img.src}
                       alt={social.name}
                       className="object-center invert dark:invert-0"
+                      width={1000}
+                      height={1000}
                     />
                   </a>
                 </li>

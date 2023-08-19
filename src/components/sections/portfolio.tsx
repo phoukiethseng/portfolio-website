@@ -1,11 +1,7 @@
 import React from "react";
-import ProjectCard, { type ProjectCardProps } from "../project-card";
+import ProjectCard from "../project-card";
 import Title from "../title";
-import {
-  type ProjectType,
-  openSourceProjects,
-  personalProjects,
-} from "@/configs/site";
+import { openSourceProjects, personalProjects } from "@/configs/site";
 import { toProjectCardProps } from "@/lib/mappers";
 
 export default function Portfolio() {
