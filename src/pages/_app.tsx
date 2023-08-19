@@ -7,7 +7,7 @@ import Script from "next/script";
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
-      <Script src="/hotjar.js" />
+      <Script src="/microsoft-clarity.js" />
       <ContextProviders>
         <Layout>
           <Component {...pageProps} />
