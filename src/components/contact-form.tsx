@@ -7,8 +7,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { type zodSchemas } from "@/lib/validationSchemas";
-import { type z } from "zod";
+import { zodSchemas } from "@/lib/validationSchemas";
+import type * as z from "zod";
 import { useForm } from "react-hook-form";
 import Button from "@/components/button";
 import { Input } from "./ui/input";
@@ -18,7 +18,7 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      content: "",
+      message: "",
     },
   });
   function onSubmit(values: z.infer<typeof zodSchemas.contactForm>) {
@@ -26,7 +26,10 @@ export default function ContactForm() {
   }
   return (
     <Form {...form}>
-      <form onSubmit={() => form.handleSubmit(onSubmit)}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col items-stretch justify-start"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -34,7 +37,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="John" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -47,7 +50,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="email@example.com" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -55,12 +58,12 @@ export default function ContactForm() {
         />
         <FormField
           control={form.control}
-          name="content"
+          name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Content</FormLabel>
+              <FormLabel>Message</FormLabel>
               <FormControl>
-                <Input {...field} type="text" />
+                <Input {...field} type="text" placeholder="Your message" />
               </FormControl>
               <FormMessage />
             </FormItem>
