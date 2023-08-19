@@ -1,6 +1,6 @@
 import { themeConfig } from "@/configs/theme";
 import { ThemeProvider } from "next-themes";
-import type React from "react";
+import React from "react";
 
 interface ContextProvidersProps {
   children: React.ReactNode;

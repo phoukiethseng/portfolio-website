@@ -25,6 +25,7 @@ const config = {
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "react/display-name": "off",
+    "@typescript-eslint/no-empty-interface": "warn",
   },
 };
 

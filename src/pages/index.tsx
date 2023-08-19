@@ -13,7 +13,7 @@ export default function Home() {
       {homePageSections.map((navItem, index) =>
         navItem.component ? (
           <section
-            className="min-h-[100vh]"
+            className="min-h-[100vh] pt-20"
             id={toNavigationMenuItem(navItem).id}
             key={index}
           >

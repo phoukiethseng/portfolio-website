@@ -1,4 +1,4 @@
-import { HomePageSectionType, type ProjectType } from "@/configs/site";
+import { type HomePageSectionType, type ProjectType } from "@/configs/site";
 import { dataTransformer } from "./utils";
 import { type NavigationMenuItemType } from "@/components/header";
 import { type ProjectCardProps } from "@/components/project-card";

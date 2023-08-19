@@ -10,6 +10,8 @@ export type ProjectType = {
   previewImg?: string;
 };
 
+export const ContactFormContentCharLimit = 1000;
+
 export type HomePageSectionType = (typeof homePageSections)[number];
 
 export const homePageSections = [
