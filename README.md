@@ -4,4 +4,12 @@ This web project is intended to be [Phou Kiethseng](https://github.com/phoukieth
 
 ## See Live
 
-🚀 Visit live: [Portfolio Website]()
+This project is deployed to Vercel
+
+🚀 Visit live: [Portfolio Website](https://kiethseng-portfolio.vercel.app/)
+
+## Get Started
+
+```shell
+npm run dev
+```
