@@ -1,0 +1,31 @@
+name: Deploy To Vercel
+env:
+  VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+  VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pre-deploy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: npm run lint
+  deploy:
+    needs: pre-deploy-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install NPM Dependencies
+        run: npm install
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Build Project Artifacts
+        run: vercel build --prod
+      - name: Deploy to Vercel
+        run: vercel deploy --prod --prebuilt --token=${{secrets.VERCEL_ACCESS_TOKEN}}
