@@ -12,9 +12,11 @@ import type * as z from "zod";
 import { useForm } from "react-hook-form";
 import Button from "@/components/button";
 import { Input } from "./ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof zodSchemas.contactForm>>({
+    resolver: zodResolver(zodSchemas.contactForm),
     defaultValues: {
       name: "",
       email: "",

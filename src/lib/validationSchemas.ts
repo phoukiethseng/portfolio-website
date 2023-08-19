@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { ContactFormContentCharLimit } from "@/configs/site";
+
+const ContactFormContentCharLimit = 1000;
 
 const contactFormSchema = z.object({
   name: z.string().nonempty().min(1).max(50),
