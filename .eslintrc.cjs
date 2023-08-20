@@ -27,6 +27,7 @@ const config = {
     "react/display-name": "off",
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/no-misused-promises": "warn",
+    "@typescript-eslint/no-namespace": "warn",
   },
 };
 

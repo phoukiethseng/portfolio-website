@@ -17,14 +17,20 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: z.string().nonempty(),
+    NEXT_PUBLIC_EMAILJS_SERVICE_ID: z.string().nonempty(),
+    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: z.string().nonempty(),
   },
-
   /**
-   * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
+   
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+    NEXT_PUBLIC_EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

@@ -1,7 +1,9 @@
+import { ContactFormContentCharLimit } from "@/lib/validationSchemas";
 import React from "react";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -14,6 +16,7 @@ import Button from "@/components/button";
 import { Input } from "./ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "./ui/textarea";
+import contact from "@/lib/contact";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof zodSchemas.contactForm>>({
@@ -24,8 +27,10 @@ export default function ContactForm() {
       message: "",
     },
   });
-  function onSubmit(values: z.infer<typeof zodSchemas.contactForm>) {
-    console.log(values);
+  function onSubmit(formValues: z.infer<typeof zodSchemas.contactForm>) {
+    contact.notify(formValues).catch((error) => {
+      console.log("Failed to notify contact, error:", error);
+    });
   }
   return (
     <Form {...form}>
@@ -72,6 +77,9 @@ export default function ContactForm() {
                   placeholder="Your message"
                 />
               </FormControl>
+              <FormDescription className="text-right text-xs">
+                Character limit: {ContactFormContentCharLimit}
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
