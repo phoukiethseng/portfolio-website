@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import Button from "@/components/button";
 import { Input } from "./ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Textarea } from "./ui/textarea";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof zodSchemas.contactForm>>({
@@ -65,7 +66,11 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Input {...field} type="text" placeholder="Your message" />
+                <Textarea
+                  {...field}
+                  className="min-h-[150px]"
+                  placeholder="Your message"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
