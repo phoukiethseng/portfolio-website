@@ -19,9 +19,8 @@ import { Textarea } from "./ui/textarea";
 import { useToast } from "./ui/use-toast";
 import { useContactFormNotification } from "@/lib/adapters/notificationAdapter";
 
-const notification = useContactFormNotification();
-
 export default function ContactForm() {
+  const notification = useContactFormNotification();
   const [submitting, setSubmitting] = useState<boolean>(false);
   const { toast } = useToast();
   const form = useForm<z.infer<typeof zodSchemas.contactForm>>({
