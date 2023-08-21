@@ -3,6 +3,10 @@ import { z } from "zod";
 export const ContactFormContentCharLimit = 1000;
 export const EmailMessageCharLimit = ContactFormContentCharLimit;
 
+export type ContactForm = z.infer<typeof contactFormSchema>;
+export type EmailJsTemplateParams = z.infer<typeof emailJsTemplateParamsSchema>;
+export type EmailMessage = z.infer<typeof emailMessageSchema>;
+
 const contactFormSchema = z.object({
   name: z.string().nonempty().nonempty().max(50),
   email: z
@@ -13,14 +17,29 @@ const contactFormSchema = z.object({
   message: z.string().max(ContactFormContentCharLimit).nonempty(),
 });
 
-const emailTemplateParamsSchema = z.object({
+const emailJsTemplateParamsSchema = z.object({
   from_name: z.string().nonempty(),
   sender_email: z.string().email().nonempty(),
   message: z.string(),
   reply_to: z.string().optional(),
 });
 
+const emailMessageSchema = z.object({
+  to: z.object({
+    email: z.string().email().nonempty(),
+    name: z.string().min(1).optional(),
+  }),
+  from: z.object({
+    email: z.string().email().nonempty(),
+    name: z.string().min(1).optional(),
+  }),
+  reply_to: z.string().optional(),
+  cc: z.string().optional(),
+  bcc: z.string().optional(),
+  message: z.string(),
+});
+
 export const zodSchemas = {
   contactForm: contactFormSchema,
-  emailTemplateParams: emailTemplateParamsSchema,
+  emailTemplateParams: emailJsTemplateParamsSchema,
 };

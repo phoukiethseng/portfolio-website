@@ -1,6 +1,7 @@
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Portfolio from "@/components/sections/portfolio";
+import { env } from "process";
 
 export type ProjectType = {
   name: string;
@@ -9,6 +10,8 @@ export type ProjectType = {
   repoLink?: string;
   previewImg?: string;
 };
+
+export const contactEmail = env.NEXT_PUBLIC_CONTACT_EMAIL ?? "";
 
 export type HomePageSectionType = (typeof homePageSections)[number];
 

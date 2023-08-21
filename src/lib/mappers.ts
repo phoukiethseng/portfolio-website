@@ -1,19 +1,28 @@
 import type * as z from "zod";
-import { type HomePageSectionType, type ProjectType } from "@/configs/site";
+import {
+  contactEmail,
+  type HomePageSectionType,
+  type ProjectType,
+} from "@/configs/site";
 import { dataTransformer } from "./utils";
 import { type NavigationMenuItemType } from "@/components/header";
 import { type ProjectCardProps } from "@/components/project-card";
-import { type zodSchemas } from "./validationSchemas";
+import {
+  ContactForm,
+  EmailJsTemplateParams,
+  EmailMessage,
+  type zodSchemas,
+} from "./validationSchemas";
 
 export const toNavigationMenuItem = dataTransformer<
   HomePageSectionType,
   NavigationMenuItemType
 >((section) => ({
   label: section.label,
-  id: toHTMLTagId(section.label),
+  id: StringToHTMLTagId(section.label),
 }));
 
-export const toProjectCardProps = dataTransformer<
+export const ProjectTypeToProjectCardProps = dataTransformer<
   ProjectType,
   ProjectCardProps
 >((project) => ({
@@ -24,15 +33,30 @@ export const toProjectCardProps = dataTransformer<
   previewImg: project?.previewImg,
 }));
 
-export const toHTMLTagId = dataTransformer<string, HTMLElement["id"]>((label) =>
-  label.toLowerCase()
+export const StringToHTMLTagId = dataTransformer<string, HTMLElement["id"]>(
+  (label) => label.toLowerCase()
 );
 
-export const toEmailTemplateParams = dataTransformer<
-  z.infer<typeof zodSchemas.contactForm>,
-  z.infer<typeof zodSchemas.emailTemplateParams>
+export const emailMessageToEmailjsTemplateParams = dataTransformer<
+  EmailMessage,
+  EmailJsTemplateParams
+>((emailMessage) => ({
+  from_name: emailMessage.from.name ?? "unknown",
+  sender_email: emailMessage.from.email,
+  message: emailMessage.message,
+  reply_to: emailMessage.reply_to,
+}));
+
+export const contactFormToEmailMessage = dataTransformer<
+  ContactForm,
+  EmailMessage
 >((contactForm) => ({
-  from_name: contactForm.name,
-  sender_email: contactForm.email,
+  to: {
+    email: contactEmail,
+  },
+  from: {
+    email: contactForm.email,
+    name: contactForm.name,
+  },
   message: contactForm.message,
 }));

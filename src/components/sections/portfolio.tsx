@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "../project-card";
 import Title from "../title";
 import { openSourceProjects, personalProjects } from "@/configs/site";
-import { toProjectCardProps } from "@/lib/mappers";
+import { ProjectTypeToProjectCardProps as toProjectCardProps } from "@/lib/mappers";
 
 export default function Portfolio() {
   const articleStyle =

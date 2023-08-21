@@ -16,8 +16,10 @@ import Button from "@/components/button";
 import { Input } from "./ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "./ui/textarea";
-import contact from "@/lib/contact";
 import { useToast } from "./ui/use-toast";
+import { useContactFormNotification } from "@/lib/adapters/notificationAdapter";
+
+const notification = useContactFormNotification();
 
 export default function ContactForm() {
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -32,7 +34,7 @@ export default function ContactForm() {
   });
   function onSubmit(formValues: z.infer<typeof zodSchemas.contactForm>) {
     setSubmitting(true);
-    contact
+    notification
       .notify(formValues)
       .then(() => {
         toast({

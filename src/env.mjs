@@ -20,6 +20,7 @@ export const env = createEnv({
     NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: z.string().nonempty(),
     NEXT_PUBLIC_EMAILJS_SERVICE_ID: z.string().nonempty(),
     NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: z.string().nonempty(),
+    NEXT_PUBLIC_CONTACT_EMAIL: z.string().nonempty(),
   },
   /**
    
@@ -31,6 +32,7 @@ export const env = createEnv({
     NEXT_PUBLIC_EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
     NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+    NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
