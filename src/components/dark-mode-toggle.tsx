@@ -16,8 +16,8 @@ export default function DarkModeToggle() {
     <Button
       className="transition-all duration-150 hover:text-primary" // Icons will be primary color when hovered
       hoverBorder={"primary"}
-      border={"base"}
-      color={"outline"}
+      border={"default"}
+      color={"none"}
       size={"icon"}
       onClick={() =>
         setTheme(
