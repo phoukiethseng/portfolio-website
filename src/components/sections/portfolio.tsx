@@ -11,7 +11,7 @@ export default function Portfolio() {
     <div className="flex flex-col items-center justify-start gap-6 px-4 lg:flex-row lg:items-start lg:justify-center">
       {openSourceProjects.length > 0 && (
         <article className={articleStyle}>
-          <Title className="text-center" size={"3xl"} thickness={"bold"}>
+          <Title align={"center"} size={"3xl"} thickness={"bold"}>
             Open Source Contributions
           </Title>
           {openSourceProjects.map((project, index) => (
@@ -21,7 +21,7 @@ export default function Portfolio() {
       )}
       {personalProjects.length > 0 && (
         <article className={articleStyle}>
-          <Title className="text-center" size={"3xl"} thickness={"bold"}>
+          <Title align={"center"} size={"3xl"} thickness={"bold"}>
             Personal Projects
           </Title>
           {personalProjects.map((project, index) => (

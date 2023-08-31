@@ -31,6 +31,7 @@ export const ProjectTypeToProjectCardProps = dataTransformer<
   viewCodesUrl: project?.repoLink,
   viewLiveUrl: project?.liveLink,
   previewImg: project?.previewImg,
+  technologies: project.technologies,
 }));
 
 export const StringToHTMLTagId = dataTransformer<string, HTMLElement["id"]>(

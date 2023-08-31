@@ -9,8 +9,7 @@ const buttonVariant = cva(["rounded-md border text-base"], {
       primary: "bg-primary text-primary-foreground",
       secondary: "bg-secondary text-secondary-foreground",
       accent: "bg-accent text-accent-foreground",
-      outline: "border text-base bg-transparent",
-      "no-outline": "border-0 text-base",
+      none: "",
     },
     size: {
       icon: "p-2",
@@ -28,6 +27,7 @@ const buttonVariant = cva(["rounded-md border text-base"], {
       "2xl": "text-2xl",
     },
     border: {
+      default: "border-border",
       primary: "border-primary",
       secondary: "border-secondary",
       accent: "border-accent",
@@ -49,7 +49,7 @@ const buttonVariant = cva(["rounded-md border text-base"], {
   defaultVariants: {
     size: "md",
     color: "primary",
-    border: "primary",
+    border: "default",
     hoverBorder: "none",
     hoverBackground: "none",
     textSize: "md",

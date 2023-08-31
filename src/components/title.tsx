@@ -17,10 +17,16 @@ const titleVariants = cva("text-foreground", {
       semibold: "font-semibold",
       bold: "font-bold",
     },
+    align: {
+      center: "text-center",
+      right: "text-right",
+      left: "text-left",
+    },
   },
   defaultVariants: {
     size: "md",
     thickness: "semibold",
+    align: "left",
   },
 });
 

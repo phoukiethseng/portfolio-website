@@ -3,12 +3,49 @@ import Contact from "@/components/sections/contact";
 import Portfolio from "@/components/sections/portfolio";
 import { env } from "process";
 
+export type Technology = {
+  name: string;
+  img: string;
+  href: string;
+};
+
+const TECHNOLOGIES = {
+  reactjs: {
+    name: "ReactJS",
+    img: "/technologies/reactjs-logo.png",
+    href: "",
+  },
+  nextjs: {
+    name: "NextJS",
+    img: "/technologies/nextjs-logo.png",
+    href: "",
+  },
+  tailwindcss: {
+    name: "TailwindCSS",
+    img: "/technologies/tailwindcss-logo.png",
+    href: "",
+  },
+  prisma: {
+    name: "Prisma ORM",
+    img: "",
+    href: "",
+  },
+  shadcn: {
+    name: "ShadCN UI",
+    img: "",
+    href: "",
+  },
+};
+
+//TODO: Find icon image for all of those above later
+
 export type ProjectType = {
   name: string;
   description: string;
   liveLink?: string;
   repoLink?: string;
   previewImg?: string;
+  technologies: Array<Technology>;
 };
 
 export const contactEmail = env.NEXT_PUBLIC_CONTACT_EMAIL ?? "";
@@ -37,6 +74,12 @@ export const personalProjects: ProjectType[] = [
       "This website itself. After my first contribution to open source community project, I decided to work on this website. By apply what I learned from community project, this project is closely following best practice and clean code architecture.",
     previewImg: "/project-previews/portfolio-website.png",
     repoLink: "https://github.com/phoukiethseng/portfolio-website",
+    technologies: [
+      TECHNOLOGIES.nextjs,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.reactjs,
+      TECHNOLOGIES.shadcn,
+    ],
   },
   {
     name: "Todo Web App",
@@ -45,6 +88,7 @@ export const personalProjects: ProjectType[] = [
     liveLink: "https://todo-web-app-murex.vercel.app/",
     repoLink: "https://github.com/phoukiethseng/todo-web-app",
     previewImg: "/project-previews/todo-web-app.png",
+    technologies: [],
   },
 ];
 export const openSourceProjects: ProjectType[] = [
@@ -55,6 +99,7 @@ export const openSourceProjects: ProjectType[] = [
     liveLink: "https://code-racer-eight.vercel.app/",
     repoLink: "https://github.com/webdevcody/code-racer",
     previewImg: "/project-previews/code-racer.png",
+    technologies: [],
   },
 ];
 
