@@ -27,12 +27,17 @@ const TECHNOLOGIES = {
   },
   prisma: {
     name: "Prisma ORM",
-    img: "",
+    img: "/technologies/prisma-logo.png",
     href: "",
   },
   shadcn: {
     name: "ShadCN UI",
-    img: "",
+    img: "/technologies/shadcn-logo.png",
+    href: "",
+  },
+  socketio: {
+    name: "Socket IO",
+    img: "/technologies/socketio-logo.png",
     href: "",
   },
 };
@@ -88,7 +93,12 @@ export const personalProjects: ProjectType[] = [
     liveLink: "https://todo-web-app-murex.vercel.app/",
     repoLink: "https://github.com/phoukiethseng/todo-web-app",
     previewImg: "/project-previews/todo-web-app.png",
-    technologies: [],
+    technologies: [
+      TECHNOLOGIES.nextjs,
+      TECHNOLOGIES.prisma,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.reactjs,
+    ],
   },
 ];
 export const openSourceProjects: ProjectType[] = [
@@ -99,7 +109,14 @@ export const openSourceProjects: ProjectType[] = [
     liveLink: "https://code-racer-eight.vercel.app/",
     repoLink: "https://github.com/webdevcody/code-racer",
     previewImg: "/project-previews/code-racer.png",
-    technologies: [],
+    technologies: [
+      TECHNOLOGIES.nextjs,
+      TECHNOLOGIES.socketio,
+      TECHNOLOGIES.shadcn,
+      TECHNOLOGIES.prisma,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.reactjs,
+    ],
   },
 ];
 

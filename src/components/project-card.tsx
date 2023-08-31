@@ -39,6 +39,7 @@ export default function ProjectCard({
                 fill
                 src={previewImg}
                 className="h-full w-full object-cover"
+                priority
               />
             </AspectRatio>
           </div>
@@ -46,7 +47,7 @@ export default function ProjectCard({
         <div className="flex flex-col gap-4">
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center justify-center xs:justify-between">
             <div className="flex flex-row items-center justify-start gap-3">
               <Link href={viewLiveUrl ?? ""}>
                 <Button
@@ -75,7 +76,7 @@ export default function ProjectCard({
                 color={"none"}
                 border={"default"}
                 hoverBorder={"primary"}
-                className="group hidden flex-row-reverse items-center justify-start p-2 transition-all duration-150 hover:gap-[2px] sm:flex"
+                className="group hidden flex-row-reverse items-center justify-start p-2 transition-all duration-150 hover:gap-[2px] xs:flex"
               >
                 <TechnologyDisplay type="text">...</TechnologyDisplay>
                 {technologies
@@ -109,14 +110,14 @@ function TechnologyDisplay({
 }) {
   return (
     <div
-      className=" relative ml-[-17px] h-9 w-9 rounded-full bg-secondary text-lg drop-shadow-md transition-all duration-300 ease-out last:ml-0 group-hover:ml-0"
+      className="relative ml-[-17px] h-9 w-9 rounded-full bg-secondary text-lg drop-shadow-md transition-all duration-300 ease-out last:ml-0 group-hover:ml-0"
       {...props}
     >
       {type === "img" && (
         <Image
           alt="Techology used"
           fill
-          className="transition-color rounded-full bg-secondary p-[5px] duration-300"
+          className="transition-color rounded-full bg-secondary object-contain p-[5px] duration-300"
           src={src ?? ""}
         />
       )}

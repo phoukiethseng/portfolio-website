@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -8,6 +10,14 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
+    screens: {
+      xs: "440px",
+      ...defaultTheme.screens,
+    },
+    breakpointsInspector: {
+      position: ["bottom", "left"],
+      // ignore: ["xs"],
+    },
     container: {
       center: true,
       padding: "2rem",
