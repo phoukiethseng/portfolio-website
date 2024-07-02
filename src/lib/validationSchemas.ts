@@ -17,6 +17,7 @@ const contactFormSchema = z.object({
   message: z.string().max(ContactFormContentCharLimit).nonempty(),
 });
 
+// EmailJS specific message message schema
 const emailJsTemplateParamsSchema = z.object({
   from_name: z.string().nonempty(),
   sender_email: z.string().email().nonempty(),
@@ -24,6 +25,7 @@ const emailJsTemplateParamsSchema = z.object({
   reply_to: z.string().optional(),
 });
 
+// Generic email message schema
 const emailMessageSchema = z.object({
   to: z.object({
     email: z.string().email().nonempty(),

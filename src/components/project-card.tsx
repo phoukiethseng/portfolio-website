@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import Button from "./button";
 import { AspectRatio } from "./ui/aspect-ratio";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Technology } from "@/configs/site";
 
 export interface ProjectCardProps {
@@ -29,7 +29,7 @@ export default function ProjectCard({
   technologies,
 }: ProjectCardProps) {
   return (
-    <Card className="transition-color duration-150 hover:border-primary">
+    <Card className="transition-color min-w-[430px] duration-150 hover:border-primary">
       <CardContent className="flex flex-col items-center justify-start gap-4 p-5 ">
         {previewImg && (
           <div className="relative w-full">
@@ -105,7 +105,7 @@ function TechnologyDisplay({
   ...props
 }: {
   type: "img" | "text";
-  src?: string;
+  src?: StaticImageData;
   children?: React.ReactNode;
 }) {
   return (

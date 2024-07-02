@@ -2,47 +2,52 @@ import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Portfolio from "@/components/sections/portfolio";
 import { env } from "process";
+import nextJsLogo from "@/resources/images/nextjs-logo.png";
+import reactJsLogo from "@/resources/images/reactjs-logo.png";
+import tailwindcssLogo from "@/resources/images/tailwindcss-logo.png";
+import prismaLogo from "@/resources/images/tailwindcss-logo.png";
+import shadcnLogo from "@/resources/images/shadcn-logo.png";
+import socketioLogo from "@/resources/images/socketio-logo.png";
+import { StaticImageData } from "next/image";
 
 export type Technology = {
   name: string;
-  img: string;
+  img: StaticImageData;
   href: string;
 };
 
 const TECHNOLOGIES = {
   reactjs: {
     name: "ReactJS",
-    img: "/technologies/reactjs-logo.png",
+    img: nextJsLogo,
     href: "",
   },
   nextjs: {
     name: "NextJS",
-    img: "/technologies/nextjs-logo.png",
+    img: reactJsLogo,
     href: "",
   },
   tailwindcss: {
     name: "TailwindCSS",
-    img: "/technologies/tailwindcss-logo.png",
+    img: tailwindcssLogo,
     href: "",
   },
   prisma: {
     name: "Prisma ORM",
-    img: "/technologies/prisma-logo.png",
+    img: prismaLogo,
     href: "",
   },
   shadcn: {
     name: "ShadCN UI",
-    img: "/technologies/shadcn-logo.png",
+    img: shadcnLogo,
     href: "",
   },
   socketio: {
     name: "Socket IO",
-    img: "/technologies/socketio-logo.png",
+    img: socketioLogo,
     href: "",
   },
-};
-
-//TODO: Find icon image for all of those above later
+} as { [key: string]: Technology };
 
 export type ProjectType = {
   name: string;
@@ -84,7 +89,7 @@ export const personalProjects: ProjectType[] = [
       TECHNOLOGIES.tailwindcss,
       TECHNOLOGIES.reactjs,
       TECHNOLOGIES.shadcn,
-    ],
+    ] as Array<Technology>,
   },
   {
     name: "Todo Web App",
@@ -98,7 +103,16 @@ export const personalProjects: ProjectType[] = [
       TECHNOLOGIES.prisma,
       TECHNOLOGIES.tailwindcss,
       TECHNOLOGIES.reactjs,
-    ],
+    ] as Array<Technology>,
+  },
+  {
+    name: "Mailixer",
+    description:
+      "Email Newsletter platform. Each user will be provided with an auto generated newsletter subscribe page.",
+    technologies: [
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.reactjs,
+    ] as Array<Technology>,
   },
 ];
 export const openSourceProjects: ProjectType[] = [
@@ -116,7 +130,7 @@ export const openSourceProjects: ProjectType[] = [
       TECHNOLOGIES.prisma,
       TECHNOLOGIES.tailwindcss,
       TECHNOLOGIES.reactjs,
-    ],
+    ] as Array<Technology>,
   },
 ];
 
