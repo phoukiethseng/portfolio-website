@@ -8,7 +8,7 @@ import tailwindcssLogo from "@/resources/images/tailwindcss-logo.png";
 import prismaLogo from "@/resources/images/tailwindcss-logo.png";
 import shadcnLogo from "@/resources/images/shadcn-logo.png";
 import socketioLogo from "@/resources/images/socketio-logo.png";
-import { StaticImageData } from "next/image";
+import { type StaticImageData } from "next/image";
 
 export type Technology = {
   name: string;
@@ -47,7 +47,7 @@ const TECHNOLOGIES = {
     img: socketioLogo,
     href: "",
   },
-} as { [key: string]: Technology };
+} as Record<string, Technology>;
 
 export type ProjectType = {
   name: string;
